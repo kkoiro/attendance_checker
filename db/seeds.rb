@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Classification.delete_all
+Participant.delete_all
+
+Classification.create(name: "a")
+Classification.create(name: "b")
+
+Participant.create(name: "user1", classification_id: 1)
+Participant.create(name: "user2", classification_id: 1)
+Participant.create(name: "user3", classification_id: 2)

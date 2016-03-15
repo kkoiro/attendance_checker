@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @participant.name %>
+</p>
+
+<p>
+  <strong>Classification_id:</strong>
+  <%= @participant.classification_id %>
+</p>
+
+<p>
+  <strong>Classification:</strong>
+  <%= @participant.classification.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @participant.status %>
+</p>
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %> |
+<%= link_to 'Destroy', @participant, method: :delete, data: { confirm: 'Are you sure?' } %>

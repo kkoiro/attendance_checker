@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :classifications
+
+  resources :participants do
+		member do
+			put :check
+		end
+
+		collection do
+			get :search
+		end
+	end
+
+	root "participants#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
