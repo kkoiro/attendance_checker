@@ -1,34 +1,8 @@
-<h1>Listing participants</h1>
-
-<%= text_field_tag "searched_name", nil, placeholder: "慶應太郎" %>
+<h1>Participants' List</h1>
+<p>下のテキストボックスに名前を入力すると検索できます.</p>
+<%= text_field_tag "searched_name", nil, placeholder: "Search", class: "form-control" %>
 <div id="ajax-wrapper">
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Classification</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
- <tbody>
-    <% @participants.each do |participant| %>
-      <tr>
-        <td><%= participant.name %></td>
-        <td><%= participant.classification_id %></td>
-        <td><%= participant.status %></td>
-        <td><%= link_to 'Detail', participant %></td>
-				<% unless participant.status%>
-					<td><%= button_to 'Check', check_participant_path(participant), method: :put %></td>
-				<% end %>
-      </tr>
-    <% end %>
-	</tbody>
-</table>
+	<%= render 'participants_table', layout: "application" %>
 </div>
 
 <br>
-
-<%= link_to 'New Participant', new_participant_path %>
