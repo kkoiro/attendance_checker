@@ -77,6 +77,7 @@ class ParticipantsController < ApplicationController
 		@classifications.each do |classification|
 			@participants.push(Participant.where("classification_id = ? AND name like ?", classification.id, "%#{params[:s_name]}%"))
 		end
+    render :index
 	end
 
 	def checked

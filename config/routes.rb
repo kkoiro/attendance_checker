@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 		end
 
 		collection do
-			get :search
+			post :search
 			get :checked
 			get :unchecked
 		end

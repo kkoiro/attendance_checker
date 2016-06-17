@@ -1,8 +1,11 @@
 <h1>Participants' List</h1>
 <p>下のテキストボックスに名前を入力すると検索できます.</p>
-<%= text_field_tag "searched_name", nil, placeholder: "Search", class: "form-control" %>
-<div id="ajax-wrapper">
-	<%= render 'participants_table', layout: "application" %>
-</div>
-
+<%= form_tag('/participants/search', method: :post, class: 'form-inline') do %>
+  <div class="form-group">
+    <%= text_field_tag :s_name, nil, placeholder: 'Input name here!', class: 'form-control' %>
+  </div>
+  <%= submit_tag 'Search', class: 'btn btn-success' %>
+<% end %>
+<br>
+<%= render 'participants_table', layout: "application" %>
 <br>
